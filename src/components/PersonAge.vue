@@ -26,7 +26,7 @@ import { defineProps } from 'vue'
 
 defineProps({
   age: Number,
-  incrementAge: Number,
-  decrementAge: Number
+  incrementAge: Function,
+  decrementAge: Function
 })
 </script>

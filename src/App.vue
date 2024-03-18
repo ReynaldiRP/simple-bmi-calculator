@@ -28,7 +28,7 @@ const incrementAge = () => {
 // Decrement the Age
 const decrementAge = (e) => {
   if (age.value <= 0) {
-    return e.prenventDefault()
+    return e.preventDefault()
   }
   return age.value--
 }
@@ -40,7 +40,7 @@ const incrementWeight = () => {
 // Decrement the Weight
 const decrementWeight = (e) => {
   if (weight.value <= 0) {
-    return e.prenventDefault()
+    return e.preventDefault()
   }
   return weight.value--
 }

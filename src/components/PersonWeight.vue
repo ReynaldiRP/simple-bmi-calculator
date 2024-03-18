@@ -26,7 +26,7 @@ import { defineProps } from 'vue'
 
 defineProps({
   weight: Number,
-  incrementWeight: Number,
-  decrementWeight: Number
+  incrementWeight: Function,
+  decrementWeight: Function
 })
 </script>
