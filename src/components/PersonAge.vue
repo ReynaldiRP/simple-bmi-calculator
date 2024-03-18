@@ -3,7 +3,12 @@
     class="flex flex-col items-center justify-center gap-8 w-[185px] h-[225px] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-xl"
   >
     <h3 class="text-xl font-extrabold text-green-500">Age</h3>
-    <h1 class="text-5xl font-black text-slate-500">{{ age }}</h1>
+    <input
+      type="number"
+      :value="age"
+      @input="updateAge"
+      class="w-1/2 text-5xl font-extrabold rounded-xl bg-transparent text-center text-slate-500"
+    />
     <div class="flex gap-8">
       <button
         @click="decrementAge"
@@ -27,6 +32,7 @@ import { defineProps } from 'vue'
 defineProps({
   age: Number,
   incrementAge: Function,
-  decrementAge: Function
+  decrementAge: Function,
+  updateAge: Function
 })
 </script>
