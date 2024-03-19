@@ -23,12 +23,23 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { ref } from 'vue'
 
-defineProps({
-  height: Number,
-  incrementHeight: Function,
-  decrementHeight: Function,
-  updateHeight: Function
-})
+const height = ref(0)
+
+// Increment the Height
+const incrementHeight = () => {
+  return height.value++
+}
+// Decrement the Height
+const decrementHeight = (e) => {
+  if (height.value <= 0) {
+    return e.preventDefault()
+  }
+  return height.value--
+}
+// Update Height Value
+const updateHeight = (e) => {
+  return (height.value = Number(e.target.value))
+}
 </script>

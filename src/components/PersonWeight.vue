@@ -27,12 +27,23 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { ref } from 'vue'
 
-defineProps({
-  weight: Number,
-  incrementWeight: Function,
-  decrementWeight: Function,
-  updateWeight: Function
-})
+const weight = ref(0)
+
+// Increment the Weight
+const incrementWeight = () => {
+  return weight.value++
+}
+// Decrement the Weight
+const decrementWeight = (e) => {
+  if (weight.value <= 0) {
+    return e.preventDefault()
+  }
+  return weight.value--
+}
+// Update Weight Value
+const updateWeight = (e) => {
+  return (weight.value = Number(e.target.value))
+}
 </script>

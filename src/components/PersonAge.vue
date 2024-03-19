@@ -27,12 +27,23 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { ref } from 'vue'
 
-defineProps({
-  age: Number,
-  incrementAge: Function,
-  decrementAge: Function,
-  updateAge: Function
-})
+const age = ref(0)
+
+// Increment the Age
+const incrementAge = () => {
+  return age.value++
+}
+// Decrement the Age
+const decrementAge = (e) => {
+  if (age.value <= 0) {
+    return e.preventDefault()
+  }
+  return age.value--
+}
+// Update Age Value
+const updateAge = (e) => {
+  return (age.value = Number(e.target.value))
+}
 </script>
